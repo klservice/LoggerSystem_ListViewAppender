@@ -1,0 +1,57 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "BewerbungsAssiLogger_Refactored/1.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "11.0.0",
+          "log4net": "3.0.3"
+        },
+        "runtime": {
+          "BewerbungsAssiLogger_Refactored.dll": {}
+        }
+      },
+      "log4net/3.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/log4net.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
+          }
+        }
+      },
+      "System.Drawing.Common/11.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.26.53018"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BewerbungsAssiLogger_Refactored/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "log4net/3.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LAZBO0rHo4DM56GIt124NaXKo6LVZcfiuWVgODdUnhPNMzTOlRJWOEIXo8zVNLm426B+coDc4ocfTsTw7R7Zeg==",
+      "path": "log4net/3.0.3",
+      "hashPath": "log4net.3.0.3.nupkg.sha512"
+    },
+    "System.Drawing.Common/11.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oF5GQr2bzXFe3urMHTPRykuS+OcW2AJOZ2YGBcAqsctQ+2JE7l7Kxqup33ZpM3C2Yfdjurts2fNZL2qnHfY4JA==",
+      "path": "system.drawing.common/11.0.0",
+      "hashPath": "system.drawing.common.11.0.0.nupkg.sha512"
+    }
+  }
+}

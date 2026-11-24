@@ -1,0 +1,86 @@
+15:37:40.6618 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+15:37:40.7354 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+15:37:58.5485 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+15:37:58.6130 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+15:38:33.9468 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+15:38:34.0167 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+15:39:01.7862 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+15:39:01.8685 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+15:39:01.8696 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+15:39:01.8702 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+15:39:01.8709 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+16:00:49.4135 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+16:00:49.4887 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+16:00:49.4895 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+16:00:49.4900 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+16:00:49.4905 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+16:03:54.2901 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+16:03:54.3503 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+16:03:54.3511 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+16:03:54.3519 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+16:03:54.3525 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+18:51:50.4020 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+18:51:50.5698 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+18:51:50.5840 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+18:51:50.5980 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+18:51:50.6116 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+18:52:14.9681 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+18:52:15.0812 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+18:52:15.0927 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+18:52:15.1049 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+18:52:15.1182 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+18:54:11.6219 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+18:54:11.7026 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+18:54:11.7038 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+18:54:11.7045 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+18:54:11.7051 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+18:54:43.7993 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+18:54:43.8812 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+18:54:43.8823 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+18:54:43.8829 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+18:54:43.8834 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+18:56:49.4986 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+18:56:49.5600 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+18:56:49.5609 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+18:56:49.5615 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+18:56:49.5621 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+18:58:00.7010 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+18:58:00.7631 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+18:58:00.7640 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+18:58:00.7645 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+18:58:00.7650 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+19:11:07.6335 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+19:11:07.7141 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+19:11:07.7149 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+19:11:07.7159 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+19:11:07.7164 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+19:11:53.6595 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+19:11:53.7567 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+19:11:53.7579 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+19:11:53.7586 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+19:11:53.7592 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+19:19:38.8441 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+19:19:38.9148 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+19:19:38.9158 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+19:19:38.9163 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+19:19:38.9169 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+19:20:33.5565 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+19:20:33.6242 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+19:20:33.6250 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+19:20:33.6255 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+19:20:33.6260 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+07:02:12.2906 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+07:02:12.4338 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+07:02:12.4348 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+07:02:12.4354 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+07:02:12.4364 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+07:04:50.6658 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+07:04:50.7393 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+07:04:50.7400 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+07:04:50.7406 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+07:04:50.7411 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.
+07:16:00.8635 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:46 - BewerbungsAssiLogger initialized successfully.
+07:16:00.9279 [DEBUG] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:47 - Legacy LoggerFactory and MVVM LogViewModel are connected.
+07:16:00.9286 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:48 - BewerbungsAssiLogger initialized successfully.
+07:16:00.9292 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:49 - BewerbungsAssiLogger initialized successfully.
+07:16:00.9300 [INFO] STARTUP LoggerSystem.MainWindow+<OnLoaded>d__6:50 - BewerbungsAssiLogger initialized successfully.

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net8.0-windows</TargetFramework><UseWPF>true</UseWPF><AssemblyName>BewerbungsAssiLogger_Refactored</AssemblyName><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup><ItemGroup>
+  <Compile Remove="Legacy\LegacyCommands.cs" />
+  <Compile Remove="Legacy\LoggerConfigurator.cs" />
+  <Compile Remove="Legacy\LoggerFactoryHelpers.cs" />
+  <Compile Remove="Models\AppenderType.cs" />
+</ItemGroup><ItemGroup><PackageReference Include="log4net" Version="3.0.3" /><PackageReference Include="System.Drawing.Common" Version="11.0.0" /></ItemGroup><ItemGroup>
+  <None Update="Images\Error_Icon.png">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+  <None Update="Images\Help_Icon.png">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+  <None Update="Images\Info_Icon.png">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+  <None Update="Images\Successfull_Icon.png">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+  <None Update="Images\Warning_Icon.png">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup></Project>

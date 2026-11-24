@@ -1,0 +1,551 @@
+<UserControl 
+    x:Class="LoggerSystem.Views.LogViewUserControl" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:local="clr-namespace:LoggerSystem.Views"
+    xmlns:providers="clr-namespace:LoggerSystem.Providers">
+    <UserControl.Resources>
+        <!--<providers:LogLevelIconProvider x:Key="LogLevelIconProvider" />-->
+        <PathGeometry x:Key="DebugGeometry"
+                  FillRule="Nonzero"
+                  Figures="M18,26 C18,8 46,8 46,26 Z M16,29 C16,23 48,23 48,29 L48,42 C48,66 16,66 16,42 Z 
+                      M20,13 L13,5 Q10,1 7,5 L6,7 L15,18 Z M44,13 L51,5 Q54,1 57,5 L58,7 L49,18 Z 
+                      M17,29 L8,22 L1,29 L4,33 L9,28 L16,34 Z M16,38 L7,34 L0,43 L4,46 L9,40 L17,44 Z
+                      M17,47 L8,45 L2,57 L7,60 L12,51 L21,53 Z M47,29 L56,22 L63,29 L60,33 L55,28 L48,34 Z
+                      M48,38 L57,34 L64,43 L60,46 L55,40 L47,44 Z M47,47 L56,45 L62,57 L57,60 L52,51 L43,53 Z"/>
+        <PathGeometry x:Key="InfoGeometry"
+                  FillRule="Nonzero"
+                  Figures="M32,3 A29,29 0 1 1 32,61 A29,29 0 1 1 32,3 Z"/>
+        <PathGeometry x:Key="WarningGeometry"
+                  FillRule="Nonzero"
+                  Figures=" M28,5 Q32,-1 36,5 L61,51 Q65,59 57,59 H7 Q-1,59 3,51 Z"/>
+        <PathGeometry x:Key="ErrorGeometry"
+                  FillRule="Nonzero"
+                  Figures=" M8,3 L32,25 L56,3 L63,10 L39,32 L63,54 L56,61 L32,39 L8,61 L1,54 L25,32 L1,10 Z"/>
+
+        <PathGeometry x:Key="FatalGeometry"
+                  FillRule="Nonzero"
+                  Figures=" M20,3 H44 L61,20 V44 L44,61 H20 L3,44 V20 Z"/>
+
+        <PathGeometry x:Key="TraceGeometry"
+                  FillRule="Nonzero"
+                  Figures=" M45,39 L61,54 Q66,59 60,63 Q56,66 52,61 L38,46 Z M27,3 A24,24 0 1 1 27,51 A24,24 0 1 1 27,3 Z"/>
+
+        <PathGeometry x:Key="SuccessGeometry"
+                  FillRule="Nonzero"
+                  Figures=" M5,27 Q10,22 15,28 L27,42 L50,6 Q55,0 60,5 Q65,9 61,15 L33,56 Q28,63 23,57 L5,38 Q0,32 5,27 Z"/>
+
+        <!-- Zusätzliche Symbolgeometrien -->
+
+        <PathGeometry x:Key="DebugSymbolGeometry"
+                  FillRule="EvenOdd"
+                  Figures="M31,30 H33 V56 H31 Z"/>
+
+        <PathGeometry x:Key="InfoSymbolGeometry"
+                  FillRule="EvenOdd"
+                  Figures="M28,15 A4,4 0 1 1 36,15 A4,4 0 1 1 28,15 Z M25,26 H35 V45 H40 V49 H24 V45 H28 V30 H25 Z"/>
+
+        <PathGeometry x:Key="WarningSymbolGeometry"
+                  FillRule="EvenOdd"
+                  Figures="M29,17 H35 L34,39 H30 Z M28,48 A4,4 0 1 1 36,48 A4,4 0 1 1 28,48 Z"/>
+
+        <PathGeometry x:Key="FatalSymbolGeometry"
+                  FillRule="EvenOdd"
+                  Figures="M16,29 C16,8 48,8 48,29 Q48,38 42,41 V51 H22 V41 Q16,38 16,29 Z
+                      M20,28 A5,5 0 1 1 30,28 A5,5 0 1 1 20,28 Z M34,28 A5,5 0 1 1 44,28
+                      A5,5 0 1 1 34,28 Z M32,33 L28,39 H36 Z M27,44 H29 V51 H27 Z M35,44 H37 V51 H35 Z"/>
+
+        <PathGeometry x:Key="TraceSymbolGeometry"
+                  FillRule="EvenOdd"
+                  Figures="M13,27 A3,3 0 1 1 19,27 A3,3 0 1 1 13,27 Z M24,27 
+                      A3,3 0 1 1 30,27 A3,3 0 1 1 24,27 Z M35,27
+                      A3,3 0 1 1 41,27 A3,3 0 1 1 35,27 Z"/>
+
+        <!-- Glanzeffekt -->
+
+        <LinearGradientBrush x:Key="IconGloss" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#BFFFFFFF" Offset="0"/>
+            <GradientStop Color="#30FFFFFF" Offset="0.6"/>
+            <GradientStop Color="#00FFFFFF" Offset="1"/>
+        </LinearGradientBrush>
+
+        <PathGeometry x:Key="IconGlossGeometry" Figures="M0,0 H64 V26 C44,42 22,20 0,37 Z"/>
+
+        <!-- Farbverläufe -->
+
+        <LinearGradientBrush x:Key="DebugBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFD999FF" Offset="0"/>
+            <GradientStop Color="#FF9825D0" Offset="0.35"/>
+            <GradientStop Color="#FF490C75" Offset="0.75"/>
+            <GradientStop Color="#FF9825D0" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="InfoBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFB5E5FF" Offset="0"/>
+            <GradientStop Color="#FF1379EA" Offset="0.35"/>
+            <GradientStop Color="#FF05328F" Offset="0.75"/>
+            <GradientStop Color="#FF1379EA" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="WarningBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFFFEEA0" Offset="0"/>
+            <GradientStop Color="#FFFFD51A" Offset="0.35"/>
+            <GradientStop Color="#FFDE8C00" Offset="0.75"/>
+            <GradientStop Color="#FFFFD51A" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="ErrorBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFFFB5B5" Offset="0"/>
+            <GradientStop Color="#FFDA1919" Offset="0.35"/>
+            <GradientStop Color="#FF8A0000" Offset="0.75"/>
+            <GradientStop Color="#FFDA1919" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="FatalBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFFFAAAA" Offset="0"/>
+            <GradientStop Color="#FFB91825" Offset="0.35"/>
+            <GradientStop Color="#FF62000C" Offset="0.75"/>
+            <GradientStop Color="#FFB91825" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="TraceBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFAEFFFF" Offset="0"/>
+            <GradientStop Color="#FF09B2C0" Offset="0.35"/>
+            <GradientStop Color="#FF006477" Offset="0.75"/>
+            <GradientStop Color="#FF09B2C0" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="SuccessBrush" StartPoint="0,0" EndPoint="0.75,1">
+            <GradientStop Color="#FFB2FFA1" Offset="0"/>
+            <GradientStop Color="#FF24BC19" Offset="0.35"/>
+            <GradientStop Color="#FF086200" Offset="0.75"/>
+            <GradientStop Color="#FF24BC19" Offset="1"/>
+        </LinearGradientBrush>
+
+        <!-- DEBUG: Käfer -->
+
+        <DrawingImage x:Key="LogIconDebug">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource DebugGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource DebugBrush}"
+                                     Geometry="{StaticResource DebugGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource DebugGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource DebugGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}"
+                                         Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="White" Geometry="{StaticResource DebugSymbolGeometry}"/>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- INFO: Kreis mit i -->
+
+        <DrawingImage x:Key="LogIconInfo">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource InfoGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource InfoBrush}" Geometry="{StaticResource InfoGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource InfoGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource InfoGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}"
+                                         Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="White" Geometry="{StaticResource InfoSymbolGeometry}"/>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- WARNING: Dreieck mit Ausrufezeichen -->
+
+        <DrawingImage x:Key="LogIconWarn">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource WarningGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource WarningBrush}"
+                                     Geometry="{StaticResource WarningGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource WarningGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource WarningGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}"
+                                         Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="#FF202020" Geometry="{StaticResource WarningSymbolGeometry}"/>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- ERROR: Rotes Kreuz -->
+
+        <DrawingImage x:Key="LogIconError">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource ErrorGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource ErrorBrush}"
+                                     Geometry="{StaticResource ErrorGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource ErrorGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource ErrorGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}"
+                                         Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- FATAL: Achteck mit Totenkopf -->
+
+        <DrawingImage x:Key="LogIconFatal">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource FatalGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource FatalBrush}"
+                                     Geometry="{StaticResource FatalGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource FatalGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource FatalGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}" 
+                                         Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="White" Geometry="{StaticResource FatalSymbolGeometry}"/>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- TRACE: Lupe mit Punkten -->
+
+        <DrawingImage x:Key="LogIconTrace">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource TraceGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource TraceBrush}"
+                                     Geometry="{StaticResource TraceGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource TraceGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource TraceGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}" Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="White" Geometry="{StaticResource TraceSymbolGeometry}"/>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- SUCCESS: Grüner Haken -->
+
+        <DrawingImage x:Key="LogIconSuccess">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <TranslateTransform X="1.5" Y="2"/>
+                        </DrawingGroup.Transform>
+
+                        <GeometryDrawing Brush="#60000000" Geometry="{StaticResource SuccessGeometry}"/>
+                    </DrawingGroup>
+
+                    <GeometryDrawing Brush="{StaticResource SuccessBrush}" 
+                                     Geometry="{StaticResource SuccessGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF171717" Thickness="3" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <GeometryDrawing Geometry="{StaticResource SuccessGeometry}">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#A0E5E5E5" Thickness="0.8" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+
+                    <DrawingGroup ClipGeometry="{StaticResource SuccessGeometry}">
+                        <GeometryDrawing Brush="{StaticResource IconGloss}" 
+                                         Geometry="{StaticResource IconGlossGeometry}"/>
+                    </DrawingGroup>
+
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- Fallback -->
+
+        <DrawingImage x:Key="LogIconDefault">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="DimGray" Geometry="{StaticResource InfoGeometry}">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#FF171717" Thickness="2"/>
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- Bildauswahl über LogEntryModel.Icon -->
+
+        <Style x:Key="LogLevelImageStyle" TargetType="Image">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+
+            <Setter Property="ToolTip" Value="{Binding Level.Name, Mode=OneWay}"/>
+
+            <Setter Property="AutomationProperties.Name" Value="{Binding Level.Name, Mode=OneWay}"/>
+
+            <Setter Property="Source" Value="{StaticResource LogIconDefault}"/>
+
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconDebug">
+                    <Setter Property="Source" Value="{StaticResource LogIconDebug}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconInfo">
+                    <Setter Property="Source" Value="{StaticResource LogIconInfo}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconWarn">
+                    <Setter Property="Source" Value="{StaticResource LogIconWarn}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconError">
+                    <Setter Property="Source" Value="{StaticResource LogIconError}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconFatal">
+                    <Setter Property="Source" Value="{StaticResource LogIconFatal}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconTrace">
+                    <Setter Property="Source" Value="{StaticResource LogIconTrace}"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Icon, Mode=OneWay}" Value="LogIconSuccess">
+                    <Setter Property="Source" Value="{StaticResource LogIconSuccess}"/>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+
+    </UserControl.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Margin="0,0,0,8" VerticalAlignment="Center">
+            <TextBlock Text="Level:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+            <ComboBox Width="95" ItemsSource="{Binding AvailableLevels}" SelectedItem="{Binding SelectedLevel}" Margin="0,0,12,0"/>
+            <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+            <TextBox Width="220" Text="{Binding SearchText,UpdateSourceTrigger=PropertyChanged}" Margin="0,0,6,0"/>
+            <Button Content="Clear Search" Command="{Binding ClearSearchCommand}" Margin="0,0,12,0"/>
+            <CheckBox Content="AutoScroll" IsChecked="{Binding AutoScroll}" VerticalAlignment="Center"/>
+        </WrapPanel>
+        <ListView x:Name="LogList" Grid.Row="1" ItemsSource="{Binding FilteredEntries}" SelectedItem="{Binding SelectedEntry,Mode=TwoWay}" local:LogViewUserControl.AutoScroll="{Binding AutoScroll}">
+            <ListView.ItemContainerStyle>
+
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+
+                    <Setter Property="ToolTip" Value="{Binding RenderedMessage}"/>
+
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Level}" Value="DEBUG">
+                            <Setter Property="Foreground" Value="DimGray"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Level}"  Value="INFO">
+                            <Setter Property="Foreground" Value="RoyalBlue"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Level}" Value="WARN">
+                            <Setter Property="Foreground" Value="DarkOrange"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Level}" Value="ERROR">
+                            <Setter Property="Foreground"  Value="Firebrick"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Level}" Value="FATAL">
+                            <Setter Property="Foreground"  Value="DarkRed"/>
+
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </DataTrigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ContextMenu>
+                <ContextMenu DataContext="{Binding PlacementTarget.DataContext,RelativeSource={RelativeSource Self}}">
+                    <MenuItem Header="Copy selected" Command="{Binding CopySelectedCommand}"/>
+                    <MenuItem Header="Copy all filtered" Command="{Binding CopyAllCommand}"/>
+                    <MenuItem Header="Remove selected" Command="{Binding RemoveSelectedCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="Clear" Command="{Binding ClearCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="Export TXT" Command="{Binding ExportTxtCommand}"/>
+                    <MenuItem Header="Export CSV" Command="{Binding ExportCsvCommand}"/>
+                    <MenuItem Header="Export ZIP" Command="{Binding ExportZipCommand}"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Icon" Width="48">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image
+                                    Width="16"
+                                    Height="16"
+                                    Stretch="Uniform"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                Source="{Binding Level, Converter={StaticResource LogLevelIconProvider}}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Timestamp" Width="155" DisplayMemberBinding="{Binding Timestamp,StringFormat=yyyy-MM-dd HH:mm:ss}"/>
+                    <GridViewColumn Header="Level" Width="65" DisplayMemberBinding="{Binding Level}"/>
+                    <GridViewColumn Header="Logger" Width="180" DisplayMemberBinding="{Binding Logger}"/>
+                    <GridViewColumn Header="Thread" Width="80" DisplayMemberBinding="{Binding Thread}"/>
+                    <GridViewColumn Header="Message" Width="480" DisplayMemberBinding="{Binding Message}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <DockPanel Grid.Row="2" Margin="0,8,0,0">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button Content="Pause" Command="{Binding PauseCommand}" Margin="3"/>
+                <Button Content="Resume" Command="{Binding ResumeCommand}" Margin="3"/>
+                <Button Content="Clear" Command="{Binding ClearCommand}" Margin="3"/>
+                <Button Content="TXT" Command="{Binding ExportTxtCommand}" Margin="3"/>
+                <Button Content="CSV" Command="{Binding ExportCsvCommand}" Margin="3"/>
+                <Button Content="ZIP" Command="{Binding ExportZipCommand}" Margin="3"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Entries: "/>
+                <TextBlock Text="{Binding EntryCount}"/>
+                <TextBlock Text="   "/>
+                <TextBlock Text="{Binding StatusMessage}"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>
